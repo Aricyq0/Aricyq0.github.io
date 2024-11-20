@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"aricyq0.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。 cs193p 课程介绍:  The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but,">
+  <meta name="description" content="本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。 cs193p 课程介绍: The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="StandFord cs193p 01 | More SwiftUI">
 <meta property="og:url" content="https://aricyq0.github.io/2024/11/20/StandFord-cs193p-01-More-SwiftUI/index.html">
 <meta property="og:site_name" content="Serein">
-<meta property="og:description" content="本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。 cs193p 课程介绍:  The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but,">
+<meta property="og:description" content="本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。 cs193p 课程介绍: The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/type-inference.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-5975be10fce535a571f42f705df281f6">
 <meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/text-button.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-43febc8d4e872d9dd3fe3c0c7177dd84">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/solve-lazyvgrid-issue-use-opacity.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-58ae8d46eabdd3713022320ff51da46f">
 <meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/aspectRatio.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-2f63bdbec6bd0495205ae449ef52fc6a">
 <meta property="article:published_time" content="2024-11-20T11:14:47.000Z">
-<meta property="article:modified_time" content="2024-11-20T12:06:06.994Z">
+<meta property="article:modified_time" content="2024-11-20T12:06:46.379Z">
 <meta property="article:author" content="Serein">
 <meta property="article:tag" content="Code">
 <meta name="twitter:card" content="summary">
@@ -199,7 +199,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-11-20 19:14:47 / Modified: 20:06:06" itemprop="dateCreated datePublished" datetime="2024-11-20T19:14:47+08:00">2024-11-20</time>
+              <time title="Created: 2024-11-20 19:14:47 / Modified: 20:06:46" itemprop="dateCreated datePublished" datetime="2024-11-20T19:14:47+08:00">2024-11-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,9 +224,7 @@
       
         <p>本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。</p>
 <p>cs193p 课程介绍:</p>
-<blockquote>
 <p>The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but, unfortunately, were not video recorded. However, we did capture the laptop screen of the presentations and demos as well as the associated audio. You can watch these screen captures using the links below. You’ll also find links to supporting material that was distributed to students during the quarter (homework, demo code, etc.).</p>
-</blockquote>
 <p>cs193p 课程网址: <a target="_blank" rel="noopener" href="https://cs193p.sites.stanford.edu/2023">https://cs193p.sites.stanford.edu/2023</a></p>
 <p>继续上一节记忆卡片的游戏制作，笔记按照课程项目制作步骤进行整理，在每个步骤依次对涉及的语法糖进行说明。建议在看第二节视频前预览一遍，了解教程框架，便于针对性的学习。</p>
 <p>该笔记基于 <a target="_blank" rel="noopener" href="https://nwdan.com/my-learning/stanford-cs193p-2.html">https://nwdan.com/my-learning/stanford-cs193p-2.html</a> 做了适当修改，添加了对于项目制作流程梳理，并在 <code>some View</code>、<code>@State</code>、<code>LazyVGrid</code> 等小节增加了部分说明。（ps：笔记非原创，原博主的笔记非常简洁清晰，推荐阅读。）</p>
