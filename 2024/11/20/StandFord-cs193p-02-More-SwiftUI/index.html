@@ -20,30 +20,42 @@
     var CONFIG = {"hostname":"aricyq0.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Crazy learning, crazy sharing.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Serein">
-<meta property="og:url" content="https://aricyq0.github.io/index.html">
+  <meta name="description" content="本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。 cs193p 课程介绍:  The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StandFord cs193p 02 | More SwiftUI">
+<meta property="og:url" content="https://aricyq0.github.io/2024/11/20/StandFord-cs193p-02-More-SwiftUI/index.html">
 <meta property="og:site_name" content="Serein">
-<meta property="og:description" content="Crazy learning, crazy sharing.">
+<meta property="og:description" content="本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。 cs193p 课程介绍:  The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but,">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/type-inference.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-5975be10fce535a571f42f705df281f6">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/text-button.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-43febc8d4e872d9dd3fe3c0c7177dd84">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/icon-button.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-be5f32f05f3f785ddda5f6c243b1e25a">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/organized-code.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-7113a33154d8e64611d3e69c29abd39a">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/cardCountAdjuster-function.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-0e24190ee0021771c5423c140f4af88d">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/lazyvgrid-issue.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-b489ecb10cd1aea24f21ab1a013e09e0">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/solve-lazyvgrid-issue-use-opacity.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-58ae8d46eabdd3713022320ff51da46f">
+<meta property="og:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/aspectRatio.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-2f63bdbec6bd0495205ae449ef52fc6a">
+<meta property="article:published_time" content="2024-11-20T11:14:47.000Z">
+<meta property="article:modified_time" content="2024-11-20T11:57:38.821Z">
 <meta property="article:author" content="Serein">
+<meta property="article:tag" content="Code">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/type-inference.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-5975be10fce535a571f42f705df281f6">
 
-<link rel="canonical" href="https://aricyq0.github.io/">
+<link rel="canonical" href="https://aricyq0.github.io/2024/11/20/StandFord-cs193p-02-More-SwiftUI/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Serein</title>
+  <title>StandFord cs193p 02 | More SwiftUI | Serein</title>
   
 
 
@@ -156,9 +168,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -174,10 +187,9 @@
       <meta itemprop="name" content="Serein">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/20/StandFord-cs193p-02-More-SwiftUI/" class="post-title-link" itemprop="url">StandFord cs193p 02 | More SwiftUI</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          StandFord cs193p 02 | More SwiftUI
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -210,7 +222,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。</p>
+        <p>本文是斯坦福大学 cs193p 公开课程第 02 集的相关笔记。</p>
 <p>cs193p 课程介绍:</p>
 <blockquote>
 <p>The lectures for the Spring 2023 version of Stanford University’s course CS193p (Developing Applications for iOS using SwiftUI) were given in person but, unfortunately, were not video recorded. However, we did capture the laptop screen of the presentations and demos as well as the associated audio. You can watch these screen captures using the links below. You’ll also find links to supporting material that was distributed to students during the quarter (homework, demo code, etc.).</p>
@@ -370,21 +382,26 @@
 <p><a target="_blank" rel="noopener" href="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/aspectRatio.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-2f63bdbec6bd0495205ae449ef52fc6a" title="aspectRatio"><img src="https://photo.nwdan.com/img/my-learning/stanford-cs193p-2/aspectRatio.png?auth_key=1731542400-wmmiHAg6KL3rJiFQgDG2-0-2f63bdbec6bd0495205ae449ef52fc6a" alt="aspectRatio" title="aspectRatio"></a></p>
 <h3 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> &#123;</span><br><span class="line">    <span class="type">VStack</span> &#123;</span><br><span class="line">        <span class="type">ScrollView</span> &#123;</span><br><span class="line">            cards</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">Spacer</span>()</span><br><span class="line">        cardCountAdjusters</span><br><span class="line">    &#125;</span><br><span class="line">    .padding()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/Code/" rel="tag"># Code</a>
+          </div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -437,6 +454,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-CardView-struct"><span class="nav-number">1.</span> <span class="nav-text">创建一个 CardView struct</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-View"><span class="nav-number">1.1.</span> <span class="nav-text">some View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%BE%E9%9A%8F%E9%97%AD%E5%8C%85-Trailing-closure-syntax"><span class="nav-number">1.2.</span> <span class="nav-text">尾随闭包 (Trailing closure syntax)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RoundedRectangle"><span class="nav-number">1.3.</span> <span class="nav-text">RoundedRectangle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F-Local-Variable"><span class="nav-number">1.4.</span> <span class="nav-text">局部变量 (Local Variable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD-Type-Inference"><span class="nav-number">1.5.</span> <span class="nav-text">类型推断 (Type Inference)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#onTapGesture"><span class="nav-number">1.6.</span> <span class="nav-text">.onTapGesture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">1.7.</span> <span class="nav-text">@State</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E4%B8%80%E7%BB%84-Card"><span class="nav-number">2.</span> <span class="nav-text">生成一组 Card</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">2.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ForEach-%E5%BE%AA%E7%8E%AF"><span class="nav-number">2.2.</span> <span class="nav-text">ForEach 循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6-Card-%E4%B8%AA%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">控制 Card 个数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E9%92%AE"><span class="nav-number">3.1.</span> <span class="nav-text">按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%8C%89%E9%92%AE"><span class="nav-number">3.1.1.</span> <span class="nav-text">文本按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E6%A0%87%E6%8C%89%E9%92%AE"><span class="nav-number">3.1.2.</span> <span class="nav-text">图标按钮</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E5%87%BA%E7%B4%A2%E5%BC%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.2.</span> <span class="nav-text">超出索引的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E7%90%86%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">整理代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81%E5%8F%AF%E8%AF%BB%E6%80%A7"><span class="nav-number">4.1.</span> <span class="nav-text">优化代码可读性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E8%BF%94%E5%9B%9E%E5%80%BC-Implicit-return"><span class="nav-number">4.2.</span> <span class="nav-text">隐式返回值 (Implicit return)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0-Function"><span class="nav-number">4.3.</span> <span class="nav-text">函数 (Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E5%B8%83%E5%B1%80"><span class="nav-number">5.</span> <span class="nav-text">优化布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LazyVGrid"><span class="nav-number">5.1.</span> <span class="nav-text">LazyVGrid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#opacity"><span class="nav-number">5.2.</span> <span class="nav-text">.opacity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectRatio"><span class="nav-number">5.3.</span> <span class="nav-text">.aspectRatio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ScrollView"><span class="nav-number">5.4.</span> <span class="nav-text">ScrollView</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
